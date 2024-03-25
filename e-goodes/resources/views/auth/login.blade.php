@@ -14,7 +14,7 @@
     <div class="container" id="container">
         <!-- Sign Up Form -->
         <div class="form-container sign-up">
-            <form action="{{ route('signup') }}" method="POST">
+            <form action="{{ route('register') }}" method="POST" enctype="multipart/form-data">
                 @csrf 
                 <h1>Create Account</h1>
                 <div class="social-icons">
@@ -27,11 +27,12 @@
                 <input type="text" name="name" placeholder="Name" required>
                 <input type="email" name="email" placeholder="Email" required>
                 <input type="password" name="password" placeholder="Password" required>
+                <input type="file" name="image" >
                 <div class="role-selection">
                     <label for="role">Select Role:</label>
                     <select name="role" id="role">
                         <option value="user">User</option>
-                        <option value="organisateur">Organisateur</option>
+                        <option value="seller">Seller</option>
                     </select>
                 </div>
                 <button type="submit" class="signup-btn">Sign Up</button> 
